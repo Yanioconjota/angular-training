@@ -13,33 +13,40 @@
 
 * {border-radius:0 !important;}
 
-hr {border: 1px solid rgba(217, 217, 217, 0.5); }
+hr {border: 1px solid rgba(63, 123, 123, 0.18); }
 
 .clockwork {font-family: 'alarm_clockregular'; color: #2CDA64;}
 body,small {
   color: #999;
+  background-color: hsl(270, 40%, 18%);
 }
 .form-control {
   background-color: transparent !important;
-  border: 1px solid #999;
+  border: 1px solid rgba(63, 123, 123, 0.18);
   color: #999;
   font-weight: 100;
 }
 
+[class*="-primary"],pre {
+    color: #3F7B7B;
+    background-color: rgba(63, 123, 123, 0.18);
+    border-color: #3F7B7B;
+}
+
 ::-webkit-input-placeholder {
-  color: rgba(217, 217, 217, 0.8) !important;
+  color: #3F7B7B !important;
 }
 
 :-moz-placeholder {
-  color: rgba(217, 217, 217, 0.8) !important;
+  color: #3F7B7B !important;
 }
 
 ::-moz-placeholder {
-  color: rgba(217, 217, 217, 0.8) !important;
+  color: #3F7B7B !important;
 }
 
 :-ms-input-placeholder  {
-  color: rgba(217, 217, 217, 0.8) !important;
+  color: #3F7B7B !important;
 }
 
 table,
@@ -48,7 +55,7 @@ table,
   background-color: transparent !important;
   outline: none;
   border:none;
-  border-bottom: 1px solid rgba(217, 217, 217, 0.5);
+  border-bottom: 1px solid rgba(63, 123, 123, 0.18);
 }
 
 

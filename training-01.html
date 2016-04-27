@@ -24,12 +24,16 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<h3>One way data binding example</h3>
-							<span>The current time is: <span ng-bind="now" class="clockwork"></span></span>
+							<div class="label label-primary">
+								<span>The current time is: <span ng-bind="now" class="clockwork"></span></span>
+							</div>
+							<p>This example uses .run method</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-12">
 							<h3>Two way data binding example</h3>
+							<p>Try typing Batman or Superman and see what happens</p>
 							<div class="form-group">
 								<!-- Two way binding -->
 								<input type="text" placeholder="Name please" ng-model="bctrl.firstName" class="form-control">
@@ -53,18 +57,30 @@
 					</div>
 				</div>
 				<div class="col-xs-12" ng-controller="Validador as vctrl">
-					<h3>Validate some range between 15 and 90</h3>
 					<form name="vctrl.form">
 						<!-- Esta es la forma villera en que el amo y señor de javaScript resolvió la validación -->
 						<!-- <div class="form-group">
-							<input type="number" class="form-control" name="comprobar"ng-model="vctrl.comprobar" required ui-validate="'$value >= 15 && $value <= 90'" min="15">
-							<label class="control-label" ng-if="vctrl.validateInput('comprobar', 'required')">Debe estar entre 15 y 90.</label>
-							<label class="control-label" ng-if="vctrl.comprobar.$dirty === false">Requerido.</label>
+							<input type="number" class="form-control" name="validRange"ng-model="vctrl.validRange" required ui-validate="'$value >= 15 && $value <= 90'" min="15">
+							<label class="control-label" ng-if="vctrl.validateInput('validRange', 'required')">Debe estar entre 15 y 90.</label>
+							<label class="control-label" ng-if="vctrl.validRange.$dirty === false">Requerido.</label>
 						</div> -->
-						<div class="form-group">
-							<input type="number" class="form-control" name="comprobar" ng-model="vctrl.comprobar" required min="15" max="90">
-							<label class="control-label" ng-if="!vctrl.form.comprobar.$valid && !vctrl.form.comprobar.$error.required">Debe estar entre 15 y 90.</label>
-							<label class="control-label" ng-if="vctrl.form.comprobar.$error.required">Requerido.</label>
+						<div class="row">
+							<div class="col-xs-6">
+								<h4>Validates if empty and range between 15 and 90</h4>
+								<div class="form-group">
+									<input type="number" class="form-control" name="validRange" ng-model="vctrl.validRange" required min="15" max="90">
+									<label class="control-label" ng-if="vctrl.validate(vctrl.form.validRange)">Value must be between 15 and 90.</label>
+									<label class="control-label" ng-if="vctrl.form.validRange.$error.required">Required.</label>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<h4>Validates if empty, min value of 1 and 3 chars max</h4>
+								<div class="form-group">
+									<input type="number" class="form-control" name="validValue" ng-model="vctrl.validValue" required min="1" ng-maxlength="3">
+									<label class="control-label" ng-if="vctrl.validate(vctrl.form.validValue)">You can only type three character max.</label>
+									<label class="control-label" ng-if="vctrl.form.validValue.$error.required">Required.</label>
+								</div>
+							</div>
 						</div>
 						<button class="btn btn-primary" ng-click="vctrl.save()">Validate</button>
 						<div class="row">

@@ -10,7 +10,7 @@ app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
 app.get('/', function (req, res) {
   //res.send('Hello World!');
-  res.render('../training-01.html');
+  res.render('../training-02.html');
 });
 
 app.listen(3000, function () {

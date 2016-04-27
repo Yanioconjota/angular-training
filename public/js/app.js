@@ -28,7 +28,7 @@ app.controller('BatmanDetector', function($scope){
 		};
 		$scope.$watch(batmanDetector,function(isBatman){
 			if(isBatman){
-				vm.sufix = 'y tu mamá se llama Martha ';
+				vm.sufix = "and your mom's name is Martha" ;
 			}
 			else {
 				vm.sufix = '';
@@ -38,7 +38,11 @@ app.controller('BatmanDetector', function($scope){
 
 app.controller('Validador',function($scope){
 	var vm = this;
-	vm.comprobar = 90;
+	vm.validRange = 90;
+	vm.validValue = 1;
+	vm.validate = function(input){
+		return ! input.$valid && ! input.$error.required;
+	}
 
 	vm.save = function(){
 		if(vm.form.$valid){
