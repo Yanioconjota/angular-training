@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'alarm_clockregular';
+    src: url('../fonts/alarm_clock-webfont.eot');
+    src: url('../fonts/alarm_clock-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alarm_clock-webfont.woff2') format('woff2'),
+         url('../fonts/alarm_clock-webfont.woff') format('woff'),
+         url('../fonts/alarm_clock-webfont.ttf') format('truetype'),
+         url('../fonts/alarm_clock-webfont.svg#alarm_clockregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {border-radius:0 !important;}
+
+hr {border: 1px solid rgba(217, 217, 217, 0.5); }
+
+.clockwork {font-family: 'alarm_clockregular'; color: #2CDA64;}
+body,small {
+  color: #999;
+}
+.form-control {
+  background-color: transparent !important;
+  border: 1px solid #999;
+  color: #999;
+  font-weight: 100;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(217, 217, 217, 0.8) !important;
+}
+
+:-moz-placeholder {
+  color: rgba(217, 217, 217, 0.8) !important;
+}
+
+::-moz-placeholder {
+  color: rgba(217, 217, 217, 0.8) !important;
+}
+
+:-ms-input-placeholder  {
+  color: rgba(217, 217, 217, 0.8) !important;
+}
+
+table,
+.table > tbody > tr > td,
+.form-control {
+  background-color: transparent !important;
+  outline: none;
+  border:none;
+  border-bottom: 1px solid rgba(217, 217, 217, 0.5);
+}
+
+
+.form-control {
+  border-radius:0 !important;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+/* The starting CSS styles for the enter animation */
+.fade.ng-enter {
+  transition:0.5s all linear;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+/* there is no need to define anything inside of the destination
+CSS class since the keyframe will take charge of the animation */
+.fade.ng-leave,
+.fade.ng-leave-active {
+  animation: 4.5s all linear;
+  -webkit-animation: 4.5s all linear;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+	<head lang="es">
+		<meta charset="UTF-8">
+		<title>Training AngularJS 1</title>
+		<link rel="stylesheet" href="node_modules/bootstrap-css-only/css/bootstrap.css">
+		<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="public/css/main.css">
+
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-animate/angular-animate.js"></script>
+		<script src="node_modules/angular-ui-validate/dist/validate.js"></script>
+		<script src="node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js"></script>
+		<script src="node_modules/angular-bootstrap-npm/dist/angular-bootstrap-tpls.js"></script>
+
+		<script src="public/js/app.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12" ng-controller="BatmanDetector as bctrl">
+					<h1>Training AngularJS 1</h1>
+					<!-- One way binding -->
+					<div class="row">
+						<div class="col-xs-12">
+							<h3>One way data binding example</h3>
+							<span>The current time is: <span ng-bind="now" class="clockwork"></span></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<h3>Two way data binding example</h3>
+							<div class="form-group">
+								<!-- Two way binding -->
+								<input type="text" placeholder="Name please" ng-model="bctrl.firstName" class="form-control">
+								<label class="control-label" ng-if="bctrl.firstName"><small>Your name is:</small>
+									<span ng-bind="bctrl.firstName"
+										ng-class="bctrl.supers"></span>
+										<i ng-if="bctrl.sufix" class="fa fa-frown-o"></i>
+									<span ng-bind="bctrl.sufix"></span>
+								</label>
+							</div>
+							<div class="form-group" ng-if="bctrl.firstName">
+								<label class="control-label">
+									<small>Howdy</small>
+									<span ng-bind="bctrl.firstName" ng-class="bctrl.supers"></span>
+									<small>wanna change your name</small>
+									<i ng-if="bctrl.sufix" class="fa fa-question-circle"></i>
+								</label>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12" ng-controller="Validador as vctrl">
+					<h3>Validate some range between 15 and 90</h3>
+					<form name="vctrl.form">
+						<!-- Esta es la forma villera en que el amo y señor de javaScript resolvió la validación -->
+						<!-- <div class="form-group">
+							<input type="number" class="form-control" name="comprobar"ng-model="vctrl.comprobar" required ui-validate="'$value >= 15 && $value <= 90'" min="15">
+							<label class="control-label" ng-if="vctrl.validateInput('comprobar', 'required')">Debe estar entre 15 y 90.</label>
+							<label class="control-label" ng-if="vctrl.comprobar.$dirty === false">Requerido.</label>
+						</div> -->
+						<div class="form-group">
+							<input type="number" class="form-control" name="comprobar" ng-model="vctrl.comprobar" required min="15" max="90">
+							<label class="control-label" ng-if="!vctrl.form.comprobar.$valid && !vctrl.form.comprobar.$error.required">Debe estar entre 15 y 90.</label>
+							<label class="control-label" ng-if="vctrl.form.comprobar.$error.required">Requerido.</label>
+						</div>
+						<button class="btn btn-primary" ng-click="vctrl.save()">Validate</button>
+						<div class="row">
+							<div class="col-xs-12 fade" ng-if="vctrl.saved">
+								<h1 class="text-center" ng-bind="vctrl.saved"></h1>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

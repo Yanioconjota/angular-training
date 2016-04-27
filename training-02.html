@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+	<head lang="es">
+		<meta charset="UTF-8">
+		<title>Training AngularJS 2</title>
+		<link rel="stylesheet" href="node_modules/bootstrap-css-only/css/bootstrap.css">
+		<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="public/css/main.css">
+
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-animate/angular-animate.js"></script>
+		<script src="node_modules/angular-ui-validate/dist/validate.js"></script>
+		<script src="node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js"></script>
+		<script src="node_modules/angular-bootstrap-npm/dist/angular-bootstrap-tpls.js"></script>
+
+		<script src="public/js/app.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12" ng-controller="myController as mctrl">
+					<!-- One way binding -->
+					<h1>Training AngularJS 2</h1>
+					<!-- ng-cloak: usarlo antes de ng-if para evitar flashing al cargar -->
+					<!-- Expresiones: No insertar for o if dentro de expresiones -->
+					<!-- Expresiones: No RegExp -->
+					<div class="row">
+						<div class="col-md-6">
+							<ul class="list-inline">
+								<li ng-repeat="number in mctrl.numberArray">
+									<button class="btn btn-success" type="button" name="button" ng-click="mctrl.doSomething(number);mctrl.numero=number">Number {{number}}</button>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6">
+							<pre class="text-center" ng-if="mctrl.numero">{{mctrl.numero}}</pre>
+						</div>
+					</div>
+					<!-- revisar JavaScript $$hashKey -->
+					<table class="table">
+						<tr ng-repeat="item in mctrl.array track by item.id">
+							<td class="table-item">Index {{ $index+1 }}</td>
+							<td class="table-item">{{item.id}}</td>
+							<td class="table-item">{{item.firstName}}</td>
+							<td class="table-item">{{item.lastName}}</td>
+						</tr>
+					</table>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<input class="form-control" type="text" placeholder="First Name" ng-model="::mctrl.newItem.firstName">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<input class="form-control" type="text" placeholder="Last Name" ng-model="::mctrl.newItem.lastName">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<button class="btn btn-success" type="button" name="button" ng-click="mctrl.add(newItem)">Push in table</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
