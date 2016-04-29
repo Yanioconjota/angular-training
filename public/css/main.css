@@ -51,6 +51,7 @@ body,small {
 
 table,
 .table > tbody > tr > td,
+.table > thead > tr > th,
 .form-control {
   background-color: transparent !important;
   outline: none;

@@ -38,22 +38,30 @@
 					</div>
 					<!-- revisar JavaScript $$hashKey -->
 					<table class="table">
-						<tr ng-repeat="item in mctrl.array track by item.id">
-							<td class="table-item">Index {{ $index+1 }}</td>
-							<td class="table-item">{{item.id}}</td>
-							<td class="table-item">{{item.firstName}}</td>
-							<td class="table-item">{{item.lastName}}</td>
-						</tr>
+						<thead>
+							<tr>
+								<th ng-repeat="(key,value) in mctrl.array[0]">
+									<span ng-bind="key"></span>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in mctrl.array">
+								<td ng-repeat="(key,value) in item">
+									<span ng-bind="value"></span>
+								</td>
+							</tr>
+						</tbody>
 					</table>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
-								<input class="form-control" type="text" placeholder="First Name" ng-model="::mctrl.newItem.firstName">
+								<input class="form-control" type="text" placeholder="First Name" ng-model="mctrl.newItem.firstName">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<input class="form-control" type="text" placeholder="Last Name" ng-model="::mctrl.newItem.lastName">
+								<input class="form-control" type="text" placeholder="Last Name" ng-model="mctrl.newItem.lastName">
 							</div>
 						</div>
 						<div class="col-md-4">
