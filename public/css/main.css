@@ -13,7 +13,10 @@
 
 * {border-radius:0 !important;}
 
-hr {border: 1px solid rgba(63, 123, 123, 0.18); }
+hr {border: 1px dashed rgba(63, 123, 123, 0.18); }
+
+.push-top {margin-top: 20px;}
+.push-bottom {margin-bottom: 20px;}
 
 .clockwork {font-family: 'alarm_clockregular'; color: #2CDA64;}
 body,small {
@@ -52,6 +55,7 @@ body,small {
 table,
 .table > tbody > tr > td,
 .table > thead > tr > th,
+.input-group-addon,
 .form-control {
   background-color: transparent !important;
   outline: none;
@@ -59,6 +63,7 @@ table,
   border-bottom: 1px solid rgba(63, 123, 123, 0.18);
 }
 
+.input-group-addon { color:rgba(63, 123, 123, 0.18); }
 
 .form-control {
   border-radius:0 !important;

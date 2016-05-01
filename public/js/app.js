@@ -69,7 +69,10 @@ app.controller('myController', function($scope){
 		console.log(number);
 		return number;
 	}
+});
 
+app.controller('dynamicTable', ['$scope', function($scope){
+	var vm = this;
 	vm.array = [
 		{id:'NES',firstName:'Freddy',lastName:'Krueger'},
 		{id:'F13',firstName:'Jason',lastName:'Voorhees'},
@@ -82,7 +85,7 @@ app.controller('myController', function($scope){
 		vm.array.push({id:vm.array.length + 1,firstName:vm.newItem.firstName, lastName:vm.newItem.lastName});
 
 	}
-});
+}]);
 
 app.controller('agenda', ['$scope', function($scope){
 	var vm = this;
@@ -90,5 +93,5 @@ app.controller('agenda', ['$scope', function($scope){
 		{firstName: 'Elliot', lastName: 'Spencer', Alias: 'Pinhead', phoneNumber: '0800-LAMENT'},
 		{firstName: 'Ed', lastName: 'Gein', Alias: 'Leatherface', phoneNumber: '0800-HOTSAUSAGE'},
 		{firstName: 'Charles "Chucky"', lastName: 'Lee', Alias: 'The Lakeshore Strangler', phoneNumber: '0800-DOLL'}
-	]
+	];
 }]);

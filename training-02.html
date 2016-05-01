@@ -18,72 +18,98 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12" ng-controller="myController as mctrl">
+				<div class="col-xs-12">
 					<!-- One way binding -->
 					<h1>Training AngularJS 2</h1>
 					<!-- ng-cloak: usarlo antes de ng-if para evitar flashing al cargar -->
 					<!-- Expresiones: No insertar for o if dentro de expresiones -->
 					<!-- Expresiones: No RegExp -->
-					<div class="row">
-						<div class="col-md-6">
-							<ul class="list-inline">
-								<li ng-repeat="number in mctrl.numberArray">
-									<button class="btn btn-primary" type="button" name="button" ng-click="mctrl.doSomething(number);mctrl.numero=number">Number {{number}}</button>
-								</li>
-							</ul>
+					<section ng-controller="myController as mctrl">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="push-bottom">Working with directives | ng-click example</h4>
+							</div>
+							<div class="col-md-6">
+								<ul class="list-inline">
+									<li ng-repeat="number in mctrl.numberArray">
+										<button class="btn btn-primary" type="button" name="button" ng-click="mctrl.doSomething(number);mctrl.numero=number">Number {{number}}</button>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<pre class="text-center" ng-if="mctrl.numero">{{mctrl.numero}}</pre>
+							</div>
 						</div>
-						<div class="col-md-6">
-							<pre class="text-center" ng-if="mctrl.numero">{{mctrl.numero}}</pre>
-						</div>
-					</div>
+					</section>
+					<hr>
 					<!-- revisar JavaScript $$hashKey -->
-					<table class="table">
-						<thead>
-							<tr>
-								<th ng-repeat="(key,value) in mctrl.array[0]">
-									<span ng-bind="key"></span>
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="item in mctrl.array">
-								<td ng-repeat="(key,value) in item">
-									<span ng-bind="value"></span>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group">
-								<input class="form-control" type="text" placeholder="First Name" ng-model="mctrl.newItem.firstName">
+					<section ng-controller="dynamicTable as dctrl">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="push-bottom">Working with directives | ng-repeat example | Dynamic table</h4>
+								<table class="table">
+									<thead>
+										<tr>
+											<th ng-repeat="(key,value) in dctrl.array[0]">
+												<span ng-bind="key"></span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="item in dctrl.array | filter: dctrl.search">
+											<td ng-repeat="(key,value) in item">
+												<span ng-bind="value"></span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input class="form-control" type="text" placeholder="First Name" ng-model="dctrl.newItem.firstName">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input class="form-control" type="text" placeholder="Last Name" ng-model="dctrl.newItem.lastName">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<button class="btn btn-primary" type="button" name="button" ng-click="dctrl.add(newItem)">Push in table</button>
+								</div>
+							</div>
+							<div class="col-xs-12">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-addon"><i class="fa fa-search"></i></div>
+										<input placeholder="Search" type="search" class="form-control" ng-model="dctrl.search">
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<input class="form-control" type="text" placeholder="Last Name" ng-model="mctrl.newItem.lastName">
+					</section>
+					<hr>
+					<section ng-controller="agenda as actrl">
+						<div class="row">
+							<div class="col-xs-12">
+								<h4 class="push-bottom">Working with directives | ng-repeat example | Phone Book Entry</h4>
+								<div ng-repeat="entrada in actrl.entradasAgenda | filter: actrl.search">
+									<pre ng-bind-template="{{entrada.firstName}} {{entrada.lastName}} | {{entrada.phoneNumber}}" >
+									</pre>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-addon"><i class="fa fa-search"></i></div>
+										<input placeholder="Search" type="search" class="form-control" ng-model="actrl.search">
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<button class="btn btn-primary" type="button" name="button" ng-click="mctrl.add(newItem)">Push in table</button>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12" ng-controller="agenda as actrl">
-							<div class="form-group">
-								<label>Search</label>
-								<input type="search">
-							</div>
-							<pre ng-repeat="entrada in actrl.entradasAgenda">
-								<span ng-bind-template="{{actrl.entradasAgenda.firstname}} {{actrl.entradasAgenda.lastName}} {{actrl.entradasAgenda.phoneNumber}}"></span>
-							</pre>
-						</div>
-					</div>
+					</section>
+					<hr>
 				</div>
 			</div>
 		</div>
-
 	</body>
 </html>
