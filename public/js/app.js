@@ -83,3 +83,12 @@ app.controller('myController', function($scope){
 
 	}
 });
+
+app.controller('agenda', ['$scope', function($scope){
+	var vm = this;
+	vm.entradasAgenda = [
+		{firstName: 'Elliot', lastName: 'Spencer', Alias: 'Pinhead', phoneNumber: '0800-LAMENT'},
+		{firstName: 'Ed', lastName: 'Gein', Alias: 'Leatherface', phoneNumber: '0800-HOTSAUSAGE'},
+		{firstName: 'Charles "Chucky"', lastName: 'Lee', Alias: 'The Lakeshore Strangler', phoneNumber: '0800-DOLL'}
+	]
+}]);

@@ -70,6 +70,17 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-xs-12" ng-controller="agenda as actrl">
+							<div class="form-group">
+								<label>Search</label>
+								<input type="search">
+							</div>
+							<pre ng-repeat="entrada in actrl.entradasAgenda">
+								<span ng-bind-template="{{actrl.entradasAgenda.firstname}} {{actrl.entradasAgenda.lastName}} {{actrl.entradasAgenda.phoneNumber}}"></span>
+							</pre>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
