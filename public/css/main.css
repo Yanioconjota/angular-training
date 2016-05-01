@@ -30,6 +30,8 @@ body,small {
   font-weight: 100;
 }
 
+.form-control:focus {box-shadow: none !important;}
+
 [class*="-primary"],pre {
     color: #3F7B7B;
     background-color: rgba(63, 123, 123, 0.18);
