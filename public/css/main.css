@@ -27,7 +27,7 @@ body,small {
   background-color: transparent !important;
   border: 1px solid rgba(63, 123, 123, 0.18);
   color: #999;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .form-control:focus {box-shadow: none !important;}
