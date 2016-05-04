@@ -8,7 +8,12 @@ app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/js", express.static(__dirname + "/public/js"));
 app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
-app.get('/', function (req, res) {
+app.get('/training1', function (req, res) {
+  //res.send('Hello World!');
+  res.render('../training-01.html');
+});
+
+app.get('/training2', function (req, res) {
   //res.send('Hello World!');
   res.render('../training-02.html');
 });
