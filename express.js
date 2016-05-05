@@ -9,13 +9,15 @@ app.use("/public/js", express.static(__dirname + "/public/js"));
 app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
 app.get('/training1', function (req, res) {
-  //res.send('Hello World!');
   res.render('../training-01.html');
 });
 
 app.get('/training2', function (req, res) {
-  //res.send('Hello World!');
   res.render('../training-02.html');
+});
+
+app.get('/training3', function (req, res) {
+  res.render('../training-03.html');
 });
 
 app.listen(3000, function () {

@@ -95,3 +95,10 @@ app.controller('agenda', ['$scope', function($scope){
 		{firstName: 'Charles "Chucky"', lastName: 'Lee', Alias: 'The Lakeshore Strangler', phoneNumber: '0800-DOLL'}
 	];
 }]);
+
+app.controller('testController',['$scope',function($scope){
+	var vm = this;
+	vm.save = function(){
+		console.log('saving...');
+	}
+}]);
