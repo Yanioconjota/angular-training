@@ -1,4 +1,4 @@
-var app = angular.module('exampleApp', ['ngAnimate','ui.bootstrap','ui.validate']);
+var app = angular.module('exampleApp', ['ngAnimate','ui.bootstrap','ui.validate','ngMessages']);
 
 app.run(function($rootScope, $interval){
 	//para inspeccionar el scope acceder por batarang, seleccionar el scope y escribir $scope en la consola

@@ -28,13 +28,16 @@
 							<button class="btn btn-primary" type="submit" name="button">Submit</button>
 						</div>
 					</form>
+					
 					<hr>
-					<div class="form-group">
-						<select class="form-control" ng-options="country.name for country in sctrl.countries" name="" ng-model="sctrl.selectedCountry">
-							<option value="">Select Country</option>
-						</select>
-						<pre ng-bind="sctrl.selectedCountry.name"></pre>
-					</div>
+					<form>
+						<div class="form-group">
+							<select class="form-control" ng-options="country.name for country in sctrl.countries" name="" ng-model="sctrl.selectedCountry">
+								<option value="">Select Country</option>
+							</select>
+							<pre ng-bind="sctrl.selectedCountry.name"></pre>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
