@@ -100,5 +100,11 @@ app.controller('testController',['$scope',function($scope){
 	var vm = this;
 	vm.save = function(){
 		console.log('saving...');
+
 	}
+	vm.countries = [
+		{id: 1, name: 'Argentina'},
+		{id: 2, name: 'Brasil'},
+		{id: 3, name: 'Chile'}
+	]
 }]);
