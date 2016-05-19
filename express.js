@@ -20,6 +20,10 @@ app.get('/training3', function (req, res) {
   res.render('../training-03.html');
 });
 
+app.get('/training4', function (req, res) {
+  res.render('../training-04.html');
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
