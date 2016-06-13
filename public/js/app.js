@@ -1,4 +1,5 @@
-var app = angular.module('exampleApp', ['ngAnimate','ui.bootstrap','ui.validate','ngMessages']);
+var app = angular.module('exampleApp', ['ngAnimate','ui.bootstrap','ui.validate']);
+//var app = angular.module('exampleApp', ['ngAnimate','ui.bootstrap','ui.validate','ngMessages']);
 
 app.run(function($rootScope, $interval){
 	//para inspeccionar el scope acceder por batarang, seleccionar el scope y escribir $scope en la consola
@@ -96,15 +97,15 @@ app.controller('agenda', ['$scope', function($scope){
 	];
 }]);
 
-app.controller('testController',['$scope',function($scope){
-	var vm = this;
-	vm.save = function(){
-		console.log('saving...');
-
-	}
-	vm.countries = [
-		{id: 1, name: 'Argentina'},
-		{id: 2, name: 'Brasil'},
-		{id: 3, name: 'Chile'}
-	]
-}]);
+// app.controller('testController',['$scope',function($scope){
+// 	var vm = this;
+// 	vm.save = function(){
+// 		console.log('saving...');
+//
+// 	}
+// 	vm.countries = [
+// 		{id: 1, name: 'Argentina'},
+// 		{id: 2, name: 'Brasil'},
+// 		{id: 3, name: 'Chile'}
+// 	]
+// }]);
